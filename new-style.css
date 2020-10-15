@@ -1,0 +1,149 @@
+@import url("font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300italic,400,400italic");
+
+/* Reset */
+
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
+
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+
+	body {
+		line-height: 1;
+	}
+/* Box Model */
+
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #555;
+    line-height: 1em;
+    margin: 0 0 1em 0;
+}
+
+.topnav a {
+  float: right;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+    /*background-color: ghostwhite;*/
+}
+.topnav a:hover {
+    background-color: ghostwhite;
+}
+.topnav a.active {
+    background-color: antiquewhite;
+    color: white;
+}
+
+.topnav {
+    position: fixed;
+    overflow: hidden;
+    background-color: #e3e3ea;
+    z-index: 1;
+    top:0;
+    width: 100%;
+}
+
+.topnav a.on
+{
+    background:yellow;
+    /*padding:2px 6px;*/
+}
+
+/** hide nav menu icon on mobile **/
+.top-bar, .middle-bar, .bottom-bar {
+    display:none !important;
+   }
+label.mobile-nav-toggle-label.fixed-nav-toggle-label {
+      display:none !important;
+}
+
+#header {
+    padding: 9em 0 9em 0;
+    background-attachment: fixed;
+    background-color: #e2ebec;
+    /* background-image: url('Images/waving-flags.webp');  */
+    background-image: url('Images/shutterstock.jpg'); 
+
+    background-repeat: no-repeat;
+    /* background-size: 1600px 370px; */
+    /* background-attachment: fixed; */
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    text-size-adjust: 80%;
+    /* vertical-align: bottom; */
+}
+#header h1 {
+    /* position: absolute; */
+    font-size: xx-large;
+    color: darkblue;
+    text-align: center;
+    /* text-size-adjust: bottom; */
+    font-weight: 1200;
+}
+.style1 {
+    padding: 30px 70px 30px 150px;
+}
+.main {
+     padding: 30px 70px 30px 150px;
+    background-image: linear-gradient(45deg, #9dc66b 5%, #4fa49a 30%, #4361c2);
+}
+.filter {
+  background-color: #4CAF50;
+  color: white;
+  padding: 4px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+.style2 {
+    background-color: ghostwhite;
+}
+
+.comp_filter {
+    /*float: left;*/
+    /*position: fixed;*/
+    width: 10%;
+     /*border: 1px solid green;*/
+    padding: 4px 4px 4px 4px;
+    display: block;
+}
+.dropbtn {
+     position: relative;
+   display: inline-block;
+    box-shadow: 0px 8px 16px 0px rgba(3, 3, 3, 0.2);
+    background-color: #f9f9f9;
+  /*min-width: 160px;*/
+    color: rgb(10, 4, 4);
+  /*background-color: #4CAF50;*/
+  /*color: white;*/
+  padding: 4px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn2 {
+    background-color: #f9f9f9;
+    padding: 4px;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+}
