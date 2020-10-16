@@ -157,3 +157,11 @@ label.mobile-nav-toggle-label.fixed-nav-toggle-label {
     display: inline-block;
   margin: 0 auto;
 }
+
+h4 {
+    font-weight: bold;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+    border:0;
+}

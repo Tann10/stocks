@@ -18,7 +18,7 @@ function latestSpendingtResponseHandler(response){
                     width: '100%',
                     height: '100%',
                     colorAxis: {colors: ['#ee9410', '#278014']}, //orange to blue
-                    title: 'Military Spending for Year 2019',
+                    chart : {title: 'Military Spending for Year 2019'},
                     // vAxis: { format: 'short', title: 'Spending in Billions ($)'},
                     // hAxis: {title: 'Country', textStyle : { fontSize: 10} },
                     // title: 'G20 Countries Military Spending across 6 years',
@@ -71,7 +71,7 @@ function spendingResponseHandler(response){
                     height: '100%',
                     vAxis: { format: 'short', title: 'Expenditure'},
                     hAxis: {title: 'Country', textStyle : { fontSize: 10} },
-                    title: 'G20 Countries Expenditure across 6 years',
+                    // title: 'G20 Countries Expenditure across 6 years',
                     legend: {position: 'top', maxLines: 3, textStyle : {fontSize: 10}},
                     // bar: {groupWidth:'80%'},
                     // hAxis: {textStyle: {fontSize: 12}},
@@ -110,7 +110,7 @@ function spendingPerCapitaResponseHandler(response){
      var options = {
          width: '100%',
          height: '100%',
-        title: 'G20 Countries GDP per Capita verses Expenditure per Capita',
+        // chart:{ title: 'G20 Countries GDP per Capita verses Expenditure per Capita'},
         hAxis: {title: 'Gross Domestic Product per capita'},
         vAxis: {title: 'Expenditure per capita', format: 'short'},
           bubble: {textStyle: {color: "transparent"}},
@@ -222,7 +222,7 @@ function overallResponseHandler(response) {
                     bubble: {textStyle: {color: "transparent"}},
                     sizeAxis: {minValue: 0,  maxSize: 10},
                      colorAxis: {colors: ['yellow', 'red']},
-                    title: 'G20 Countries GDP verses Expenditure',
+                    // title: 'G20 Countries GDP verses Expenditure',
                     legend: {position: 'top', maxLines: 3, textStyle : {fontSize: 10}},
                     // bar: {groupWidth:'80%'},
                     // hAxis: {textStyle: {fontSize: 12}},
@@ -305,11 +305,12 @@ function GDPResponseHandler(response) {
     var data = response.getDataTable();
     console.log(data)
     var options = {
+        chart : { title: 'G20 Countries GDP per Capita verses Expenditure per Capita'},
         // colorAxis: {colors: ['#224be8']},
          defaultColor: '#089ff1',
 
         // fill: "blue",
-        title: 'G20 Countries GDP per Capita verses Expenditure per Capita',
+        // title: 'G20 Countries GDP per Capita verses Expenditure per Capita',
         // hAxis: {title: 'Gross Domestic Product per capita'},
         // vAxis: {title: 'Expenditure per capita', format: 'short'},
         //   bubble: {textStyle: {color: "transparent"}},
