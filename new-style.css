@@ -147,3 +147,13 @@ label.mobile-nav-toggle-label.fixed-nav-toggle-label {
   border: none;
   cursor: pointer;
 }
+
+#geo_div{
+  display: inline-block;
+  margin: 0 auto;
+}
+
+.charts {
+    display: inline-block;
+  margin: 0 auto;
+}

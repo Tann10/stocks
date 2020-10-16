@@ -15,6 +15,8 @@ function latestSpendingtResponseHandler(response){
                 containerId: 'mil_geo_chart',
                 view: {columns: [1, 2]},
                 options: {
+                    width: '100%',
+                    height: '100%',
                     colorAxis: {colors: ['#ee9410', '#278014']}, //orange to blue
                     title: 'Military Spending for Year 2019',
                     // vAxis: { format: 'short', title: 'Spending in Billions ($)'},
@@ -65,6 +67,8 @@ function spendingResponseHandler(response){
                 containerId: 'over_time_column_chart',
                 view: {columns: [1, 2, 3, 4, 5, 6, 7]},
                 options: {
+                    width: '100%',
+                    height: '100%',
                     vAxis: { format: 'short', title: 'Expenditure'},
                     hAxis: {title: 'Country', textStyle : { fontSize: 10} },
                     title: 'G20 Countries Expenditure across 6 years',
@@ -72,7 +76,7 @@ function spendingResponseHandler(response){
                     // bar: {groupWidth:'80%'},
                     // hAxis: {textStyle: {fontSize: 12}},
                     // vAxis: {title: 'Billions ($)'},
-                    backgroundColor: '#F7F7F7',
+                    // backgroundColor: '#F7F7F7',
                 }
             };
 
@@ -89,7 +93,7 @@ function spendingResponseHandler(response){
                     allowNone: false,
                     allowMultiple: false,
                     labelStacking: 'horizontal',
-                    cssClass: 'dropbtn2'
+                    cssClass: 'dropbtn'
                 },
                 fontName: "Helvetica Neue"
             },
@@ -104,12 +108,16 @@ function spendingResponseHandler(response){
 function spendingPerCapitaResponseHandler(response){
     var data = response.getDataTable();
      var options = {
+         width: '100%',
+         height: '100%',
         title: 'G20 Countries GDP per Capita verses Expenditure per Capita',
         hAxis: {title: 'Gross Domestic Product per capita'},
         vAxis: {title: 'Expenditure per capita', format: 'short'},
           bubble: {textStyle: {color: "transparent"}},
           sizeAxis: {minValue: 0,  maxSize: 10},
-          colorAxis: {colors: ['yellow', 'red']}
+          colorAxis: {colors: ['yellow', 'red']},
+         backgroundColor: '#F7F7F7',
+
 
         // bubble: {textStyle: {fontSize: 11}}
       };
@@ -130,7 +138,7 @@ function  spendingComparisonResponseHandler(response){
                     hAxis: { format: 'short', title: 'Expenditure'},
                     vAxis: {title: 'Country', textStyle : { fontSize: 10} },
                     title: 'G20 Countries Expenditure across 6 years',
-                    legend: {position: 'right', maxLines: 3, textStyle : {fontSize: 10}},
+                    legend: {position: 'right', maxLines: 3, textStyle : {fontSize: 13}},
                     isStacked: true,
 
                     bar: {groupWidth:'80%'},
@@ -203,6 +211,8 @@ function overallResponseHandler(response) {
         var dashboard = new google.visualization.Dashboard(document.getElementById('military_spending_div'));
 
         var chartOptions = {
+            width: '100%',
+                    height: '100%',
         chartType: 'BubbleChart',
         containerId: 'bubble_chart',
         view: {columns: [0, 3, 1, 4]},
@@ -260,7 +270,8 @@ function trendGDPResponseHandler(response) {
         title: 'G20 Countries Military, Health, and Education Expenditure',
         hAxis: {title: 'Year', format: '0'},
         vAxis: {title: 'Expenditure', format: 'short'},
-            legend: {position: 'top', maxLines: 3, textStyle : {fontSize: 10}},
+        legend: {position: 'right', maxLines: 3, textStyle : {fontSize: 13}},
+        backgroundColor: '#F7F7F7',
 
 
         // bubble: {textStyle: {fontSize: 11}}
@@ -279,7 +290,7 @@ function trendGDPResponseHandler(response) {
                     allowNone: false,
                     allowMultiple: false,
                     labelStacking: 'horizontal',
-                    cssClass: 'dropbtn'
+                    cssClass: 'dropbtn2'
                 },
             },
             state: {selectedValues: ['United States']},
@@ -287,4 +298,28 @@ function trendGDPResponseHandler(response) {
         dashboard.bind(filter, chart);
         // chart.draw(data);
         dashboard.draw(data);
+}
+
+
+function GDPResponseHandler(response) {
+    var data = response.getDataTable();
+    console.log(data)
+    var options = {
+        // colorAxis: {colors: ['#224be8']},
+         defaultColor: '#089ff1',
+
+        // fill: "blue",
+        title: 'G20 Countries GDP per Capita verses Expenditure per Capita',
+        // hAxis: {title: 'Gross Domestic Product per capita'},
+        // vAxis: {title: 'Expenditure per capita', format: 'short'},
+        //   bubble: {textStyle: {color: "transparent"}},
+        //   sizeAxis: {minValue: 0,  maxSize: 10},
+        //   colorAxis: {colors: ['yellow', 'red']}
+
+
+        // bubble: {textStyle: {fontSize: 11}}
+      };
+
+      var chart = new google.visualization.GeoChart(document.getElementById('geo_div'));
+      chart.draw(data, options);
 }

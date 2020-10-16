@@ -3,60 +3,31 @@
 <html>
 	<head>
 		<!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155266180-1"></script>
-		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/css/styles.css">
-<!-- <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-155266180-1');
-
-</script> -->
-
-		<!-- <script type="text/javascript">
-			$(window).on("scroll", function() {
-				if($(window).scrollTop()) {
-					$('nav').addClass('topnav');
-				}
-				else {
-					$('nav').addClass('topnav');
-				}
-
-			})
-		</script> -->
-
-		<meta charset="utf-8" />
+		 <meta charset="utf-8" />
 
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155266180-1"></script>
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+  		<link rel="stylesheet" href="assets/css/styles.css">
 		<link rel="stylesheet" href="new-style.css" />
 		<!-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script> -->
-
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+		  <script src="https://www.gstatic.com/charts/loader.js"></script>
 
-	<script type="text/javascript">
-	$(function(){
-		var $page = jQuery.url.attr("file");
-		console.log($page)
-		$('.topnav a').each(function(){
-			var $href = $(this).attr('href');
-			if ( ($href == $page) || ($href == '') ) {
-				$(this).addClass('on');
-			} else {
-				$(this).removeClass('on');
-			}
-		});
-	});
-	</script>
+          <script type="text/javascript" src="helper.js"></script>
 
+		<script>
+            google.charts.load('current', { 'packages' : [ 'corechart', 'geochart', 'table', 'controls']});
+            google.charts.setOnLoadCallback(drawDashboard);
 
+         function drawDashboard() {
+
+             drawSheetName('data2019', 'SELECT A', GDPResponseHandler);
+        }
+		</script>
 
     </head>
     
@@ -97,11 +68,19 @@
 
     		<!-- One-->
 
-			<section id="one" class="style1">
+			<section id="one" class="style1" >
+<!--					 style="background:rgba(234,239,239,0.96)">-->
 				<div style='background:transparent !important' class="jumbotron text-center">
 <!--					  <h>Talk about G20 website</h>-->
-					  <p>Resize this responsive page to see the effect!</p>
-					</div>
+					  <p>Here you will find Gross Domestic Product and expenditure information for G20 countries. Currently,
+					  the expenditure data is available for healthcare, military and education for 6 years. The purpose of this website
+					  is to help researchers, students, analysts or anyone who is in search of the information. The visualization created are very information and usefuly for driving insights.
+						  Feel free to explore further by clicking on the sections below or using navigation links.</p>
+
+									<div id="geo_div" style="width: 1000px; height: 400px; align-items:center;"></div>
+
+				</div>
+
 
 			</section>
 
@@ -109,24 +88,24 @@
 
 				<div class="container-fluid">
 
-					<div class="row justify-content-around">
+					<div class="row justify-content-around", style="padding-bottom: 30px">
 						<div class="col-md-4">
 
 <!--						<div class="col-md-offset-1">-->
 
 							<span class="image fit"><a href="Health.html"><img src="images/Health.jpg"
-																			   width="200" height="200" alt="" class="img-rounded"/></a></span>
+																			   width="300" height="300" alt="" class="img-rounded"/></a></span>
 
-							<h3>Health Care</h3>
+							<h1>Health Care</h1>
 
 						</div>
 
 						<div class="col-md-4">
 
 							<span class="image fit"><a href="Education.html"><img src="images/Education.jpg"
-																				  width="200" height="200" alt="" class="img-rounded"/></a></span>
+																				  width="300" height="300" alt="" class="img-rounded"/></a></span>
 
-							<h3>Education</h3>
+							<h1>Education</h1>
 
 
 						</div>
@@ -134,9 +113,9 @@
 						<div class="col-md-4">
 
 							<span class="image fit"><a href="Military.html"><img src="images/Military.jpg"
-																				 width="200" height="200" alt="" class="img-rounded"/></a></span>
+																				 width="300" height="300" alt="" class="img-rounded"/></a></span>
 
-							<h3>Military</h3>
+							<h1>Military</h1>
 						</div>
 					</div>
 
