@@ -386,7 +386,7 @@ function perChangeResponseHandler(response) {
         options: {
             width: '100%',
             height: '100%',
-            vAxis: {format: 'short', title: 'Year on Year spending growth (%)'},
+            vAxis: {format: '#%', title: 'Year on Year spending growth (%)'},
             hAxis: {title: 'Country', textStyle: {fontSize: 10}},
             legend: {position: 'top', maxLines: 3, textStyle: {fontSize: 10}},
             backgroundColor: '#F7F7F7',
