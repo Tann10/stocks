@@ -1,72 +1,104 @@
 <!DOCTYPE HTML>
 
 <html>
-	<head>
-       <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155266180-1"></script>
-        <meta charset="utf-8" />
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155266180-1"></script>
+    <meta charset="utf-8"/>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-		<link rel="stylesheet" href="new-style.css" />
+    <link rel="stylesheet" href="new-style.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <!--    </head>-->
+    <nav class="topnav">
 
-<!--    </head>-->
-        <nav class="topnav">
-            <a href="Comparison.html"><span>Comparison</span></a>
+        <a href="About.html"><span>About</span></a>
+        <a href="Comparison.html"><span>Comparison</span></a>
+        <a href="Military.html"><span>Military</span></a>
+        <a href="Education.html"><span>Education</span></a>
+        <a href="Health.html"><span>Health</span></a>
+        <a href="index.html"><span>Home</span></a>
 
-          <a href="Military.html" ><span>Military</span></a>
-            <a href="Education.html"><span>Education</span></a>
-			<a href="Health.html"><span>Health</span></a>
+    </nav>
+    <title>Comparisons</title>
 
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript" src="helper.js"></script>
 
-            <a href="index.html"><span>Home</span></a>
+    <script>
+        google.charts.load('current', {'packages': ['corechart', 'geochart', 'table', 'controls']});
+        google.charts.setOnLoadCallback(drawDashboard);
 
-        </nav>
-        <title>Education Spending Comparisons</title>
+        function drawDashboard() {
 
-        <script src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript" src="helper.js"></script>
+            drawSheetName('Comparison', 'SELECT A, B, C, D, E, F', spendingComparisonResponseHandler);
+            drawSheetName('full-data', 'SELECT B, C, K, L, M, D', trendGDPResponseHandler);
+            drawSheetName('Comparison-PerChange', 'SELECT A, B, C, D, E', comparisonPerChangeResponseHandler);
 
-        <script>
-            google.charts.load('current', { 'packages' : [ 'corechart', 'geochart', 'table', 'controls']});
-            google.charts.setOnLoadCallback(drawDashboard);
-
-         function drawDashboard() {
-
-             drawSheetName('Comparison', 'SELECT A, B, C, D, E, F', spendingComparisonResponseHandler);
-
-             // drawSheetName('full-data', 'select C, sum(D)  group by C  pivot B', trendGDPResponseHandler);
-             drawSheetName('full-data', 'SELECT B, C, K, L, M', trendGDPResponseHandler);
 
         }
-        </script>
-    </head>
+    </script>
+</head>
 
-    <body>
-        <h3>Education Spending </h3>
-<!--        <div id="military_spending_div" style="width: 1200px; height: 400px;"></div>-->
-<!--        <div id="filter_div_geo"></div>-->
-<!--        <div id="filter_div" class = "comp_filter"></div>-->
+<body>
+<div id="body">
+    <div class="FirstGraph" style="padding-top: 4%">
+        <h4>G20 Countries Military, Health Care , and Education Expenditure</h4>
+        <div id="filter_div_compare1" style="width: 300px; float:left; height:50px; margin:10px"></div>
+        <div id="filter_div_compare2" style="width: 300px; float:left; height:100px;  margin:10px"></div>
+        <div id="compare_spending_div" style=" height: 400px; padding-top: 70px"></div>
 
-                 <div id="filter_div" style="width: 300px; float:left; height:50px; margin:10px"></div>
-        <div id="filter_div_2" style="width: 300px; float:left; height:100px;  margin:10px"></div>
+        <ol type="1" class="a" style="padding-top: 11%">
+            <li>In terms of % of GDP, United States hass highest expenditure altogether followed by Brazil and Germany
+            </li>
+            <li>United States spends highest on Health, Education and then Military</li>
+            <li>Even in terms of per capita United states expenditure is highest whereas India is lowest</li>
+            <li>In terms of fixed value expenditure (US Dollars), there is a huge gap between the spending of the US and
+                rest of the countries
+            </li>
+        </ol>
+    </div>
 
+    <div class="SecondGraph" style="background: #f9f9f9">
+        <h4>Military, Health Care , and Education Expenditure over years</h4>
 
-        <div id="compare_spending_div" style=" height: 400px; padding-top: 70px; padding-bottom: 70px"></div>
-
-<!--        <div id="trend_filter_div" style="padding-top:150px;"></div>-->
-        <div id="trend_filter_div" style="padding-top:10%;"></div>
+        <div id="trend_filter_div"></div>
 
         <div id="trend_div" style=" height: 500px"></div>
 
-<!--        <div id="over_time_column_chart" style="width: 1200px; height: 400px;"></div>-->
-<!--        <div id="bubble_div" style="width: 1200px; height: 400px;"></div>-->
+        <ol type="1" class="a" style="padding-top: 0%">
+            <li>In the US, health expenditure has been increasing over the years but education and military is nearly
+                the same
+            </li>
+            <li>India shows nearly same change in shape of spending over years</li>
+            <li>Saurdi Arabia shows increase in miltary spending but not much change in health spending</li>
+            <li>In terms of fixed value expenditure (US Dollars), there is a huge gap between the spending of the US and
+                rest of the countries
+            </li>
+        </ol>
+    </div>
 
+    <div class="ThirdGraph">
 
+        <h4>G20 Countries Military, Education, Health Care Percentage Change from Year 2014 to 2019</h4>
+        <div id="filter_div"></div>
+        <div id="over_time_column_chart" style="height: 500px;"></div>
+        <div id="observations">
+            <!--        <p>-->
+            <ol type="1" class="a" style="">
+                <li> In terms of USD expenditure, India, Indonesia, Korea, and United States have positive growth whereas Argentina,
+                    Brazil, Italy Mexico, Russia and UK has negative growth across all sectors.
+                </li>
+                <li>Fastest growing country in Military and Education is India and in Health Care is China</li>
+                <li>Similar results are seen in terms of Per Capita</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div id="footer"></div>
 
-    </body>
+</body>
 </html>

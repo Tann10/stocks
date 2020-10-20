@@ -16,6 +16,8 @@
 
 <!--    </head>-->
         <nav class="topnav">
+            			<a href="About.html"><span>About</span></a>
+
 			<a href="Comparison.html"><span>Comparison</span></a>
 
           <a href="Military.html" ><span>Military</span></a>
@@ -37,30 +39,65 @@
          function drawDashboard() {
 
              drawSheetName('Education-Expenditure', 'SELECT A, B, C, D, E, F, G, H', spendingResponseHandler);
-             drawSheetName('Education-Expenditure', 'SELECT A, B, H', latestSpendingtResponseHandler);
-             drawSheetName('full-data', 'SELECT B, F, O, G', spendingPerCapitaResponseHandler);
+             drawSheetName('Education-PerChange', 'SELECT A, B, C, D, E, F, G', perChangeResponseHandler);
+
+             // drawSheetName('Education-Expenditure', 'SELECT A, B, H', latestSpendingtResponseHandler);
+             drawSheetName('full-data', 'SELECT B, F, O, G, C', spendingPerCapitaResponseHandler);
 
         }
         </script>
     </head>
 
     <body>
-
+        <div id="body">
         <h3 style="padding-top: 40px"><center>Welcome to G20 Education Expenditure Analysis</center></h3>
 
-<!--        <div id="military_spending_div" style="width: 1200px; height: 400px;"></div>-->
-        <div id="filter_div_geo"></div>
-        <h4>Education Spending for Year 2019</h4>
-        <div id="mil_geo_chart" style="height: 500px;padding-top: 70px"></div>
-
-        <h4 style="background: #f9f9f9">G20 Countries GDP per Capita verses Expenditure per Capita</h4>
-        <div id="bubble_div" style="height: 500px;"></div>
-
-        <div id="filter_div" class="style2"></div>
+        <div class="FirstGraph">
         <h4>G20 Countries Expenditure across 6 years</h4>
+        <div id="filter_div"></div>
         <div id="over_time_column_chart" style="height: 500px;"></div>
+                <div id="observations">
+<!--        <p>-->
+            <ol type="1" class="a" style="">
+        <li>As a % of GDP, Brazil has been constantly spending higher followed by South Africa, Argentina and United Kingdom. Whereas Per Capita expenditure
+        is highest in the USA followed by Australia and Canada</li>
+        <li>Education Expenditure data is missing for China, France, Saudi Arabia, Turkey</li>
+        <li>Japan has lowest health expenditure as a percentage of GPA whereas India is lowest in terms of per capita </li>
+            </ol>
+    </div>
 
+        </div>
 
+        <div class="SecondGraph" style="background: #f9f9f9">
+            <h4>G20 Countries Education Expenditure Percentage Change</h4>
+            <div id="per_change_filter_div"></div>
 
+        <div id="per_change_div" style="height: 500px;padding-top: 0px"></div>
+
+            <ol type="1" class="a" style="">
+                <li>In terms of % of GDP, Indonesia has highest jump from 2014-2015 (8.99%) whereas Mexico has highest decline in expenditure in from 2016 </li>
+                <li>In terms of per capita, Russian shows a lot of fluctuation such as there was drop by 36% in year 2015 and increase by 23% in 2017</li>
+                <li>India, Indonesia, and USA shows increase in per capita education expenditure every year</li>
+            </ol>
+
+        </div>
+
+<!--        <div id="military_spending_div" style="width: 1200px; height: 400px;"></div>-->
+<!--        <div id="filter_div_geo"></div>-->
+<!--        <h4>Education Spending for Year 2019</h4>-->
+<!--        <div id="mil_geo_chart" style="height: 500px;padding-top: 70px"></div>-->
+
+        <div class="ThirdGraph">
+
+            <h4>G20 Countries GDP per Capita verses Expenditure per Capita</h4>
+            <div id="bubble_div" style="height: 500px;"></div>
+            <ol type="1" class="a" style="">
+                <li>Graph shows there is positive linear relationship between GDP per capita and Expenditure per capita</li>
+                <li>Countries with very high population have lowest expenditure per capita</li>
+            </ol>
+
+        </div>
+</div>
+<div id = "footer"></div>
     </body>
 </html>

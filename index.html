@@ -1,126 +1,115 @@
 <!DOCTYPE HTML>
 
 <html>
-	<head>
-		<!-- Global site tag (gtag.js) - Google Analytics -->
-		 <meta charset="utf-8" />
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <meta charset="utf-8"/>
 
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-155266180-1"></script>
-		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  		<link rel="stylesheet" href="assets/css/styles.css">
-		<link rel="stylesheet" href="new-style.css" />
-		<!-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script> -->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-          <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-          <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-          <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-		  <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155266180-1"></script>
 
-          <script type="text/javascript" src="helper.js"></script>
+    <link rel="stylesheet" href="new-style.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
 
-		<script>
-            google.charts.load('current', { 'packages' : [ 'corechart', 'geochart', 'table', 'controls']});
-            google.charts.setOnLoadCallback(drawDashboard);
+    <script type="text/javascript" src="helper.js"></script>
 
-         function drawDashboard() {
+    <script>
+        google.charts.load('current', {'packages': ['corechart', 'geochart', 'table', 'controls']});
+        google.charts.setOnLoadCallback(drawDashboard);
 
-             drawSheetName('data2019', 'SELECT A', GDPResponseHandler);
+        function drawDashboard() {
+
+            drawSheetName('data2019', 'SELECT A, C', GDPResponseHandler);
         }
-		</script>
+    </script>
+    <title>Home</title>
+</head>
 
-    </head>
-    
-    <body>
+<body>
 
-        <nav class="topnav">
+<nav class="topnav">
+    <a href="About.html"><span>About</span></a>
+    <a href="Comparison.html"><span>Comparison</span></a>
+    <a href="Military.html"><span>Military</span></a>
+    <a href="Education.html"><span>Education</span></a>
+    <a href="Health.html"><span>Health</span></a>
+    <a href="index.html"><span>Home</span></a>
+</nav>
 
-			<a href="Comparison.html"><span>Comparison</span></a>
+<!-- Header -->
 
-            <a href="Military.html" ><span>Military</span></a>
-            <a href="Education.html"><span>Education</span></a>
-			<a href="Health.html"><span>Health</span></a>
+<section id="header">
 
+    <h1>Welcome to G20 website</h1>
 
-            <a href="index.html"><span>Home</span></a>
+</section>
 
-        </nav>
-
-        		<!-- Header -->
-
-			<section id="header">
-
-						<h1>Welcome to G20 website</h1>
-
-            </section>
-            
-    <script src="assets/js/jquery.min.js"></script>
-
-    <script src="assets/js/jquery.scrolly.min.js"></script>
-
-    <script src="assets/js/skel.min.js"></script>
-
-    <script src="assets/js/util.js"></script>
-
-    <!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-
-    <script src="assets/js/main.js"></script>
-
-    		<!-- One-->
-
-			<section id="one" class="style1" >
-<!--					 style="background:rgba(234,239,239,0.96)">-->
-				<div style='background:transparent !important' class="jumbotron text-center">
-<!--					  <h>Talk about G20 website</h>-->
-					  <p>Here you will find Gross Domestic Product and expenditure information for G20 countries. Currently,
-					  the expenditure data is available for healthcare, military and education for 6 years. The purpose of this website
-					  is to help researchers, students, analysts or anyone who is in search of the information. The visualization created are very information and usefuly for driving insights.
-						  Feel free to explore further by clicking on the sections below or using navigation links.</p>
-
-									<div id="geo_div" style="width: 1000px; height: 400px; align-items:center;"></div>
-
-				</div>
+<!--		    <script src="jquery.scrolly.min.js"></script>-->
 
 
-			</section>
+<!-- One-->
 
-    <section id="two" class="main">
+<section id="one" class="style1">
+    <!--					 style="background:rgba(234,239,239,0.96)">-->
+    <div style='background:transparent !important; padding-bottom: 0; padding-top: 0' class="jumbotron text-center">
+        <p>Here you will find Gross Domestic Product and expenditure information for G20 countries. The data is retrived
+            from <a href="https://data.worldbank.org/">World data website</a> Currently,
+            the expenditure data is available for healthcare, military and education for 6 years (2014-2019). Missing data has been
+            using linear interpolation. The purpose of this website
+            is to help researchers, students, analysts or anyone who is in search of the information. The visualization
+            created are very information and usefuly for driving insights.
+            Feel free to explore further by clicking on the sections below or using navigation links.</p>
+        <br>
+        <h4>Gross Domestic Product across G20 countries for Year 2019</h4>
 
-				<div class="container-fluid">
+        <div id="geo_div" style="width: 1000px; height: 400px; align-items:center;"></div>
 
-					<div class="row justify-content-around", style="padding-bottom: 30px">
-						<div class="col-md-4">
+    </div>
 
-<!--						<div class="col-md-offset-1">-->
+
+</section>
+
+<section id="two" class="main">
+
+    <div class="container-fluid">
+
+        <div class="row justify-content-around" , style="padding-bottom: 30px">
+            <div class="col-md-4">
 
 							<span class="image fit"><a href="Health.html"><img src="images/Health.jpg"
-																			   width="300" height="300" alt="" class="img-rounded"/></a></span>
+                                                                               width="300" height="300" alt=""
+                                                                               class="img-rounded"/></a></span>
 
-							<h1>Health Care</h1>
+                <h1>Health Care</h1>
 
-						</div>
+            </div>
 
-						<div class="col-md-4">
+            <div class="col-md-4">
 
 							<span class="image fit"><a href="Education.html"><img src="images/Education.jpg"
-																				  width="300" height="300" alt="" class="img-rounded"/></a></span>
+                                                                                  width="300" height="300" alt=""
+                                                                                  class="img-rounded"/></a></span>
 
-							<h1>Education</h1>
+                <h1>Education</h1>
 
 
-						</div>
+            </div>
 
-						<div class="col-md-4">
+            <div class="col-md-4">
 
 							<span class="image fit"><a href="Military.html"><img src="images/Military.jpg"
-																				 width="300" height="300" alt="" class="img-rounded"/></a></span>
+                                                                                 width="300" height="300" alt=""
+                                                                                 class="img-rounded"/></a></span>
 
-							<h1>Military</h1>
-						</div>
-					</div>
+                <h1>Military</h1>
+            </div>
+        </div>
 
-				</div>
+    </div>
 
-    </body>
+</body>
 
 </html>

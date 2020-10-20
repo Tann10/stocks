@@ -16,7 +16,8 @@
 
 <!--    </head>-->
         <nav class="topnav">
-			<a href="Comparison.html"><span>Comparison</span></a>
+          <a href="About.html"><span>About</span></a>
+            <a href="Comparison.html"><span>Comparison</span></a>
 
           <a href="Military.html" ><span>Military</span></a>
             <a href="Education.html"><span>Education</span></a>
@@ -52,7 +53,9 @@
          function drawDashboard() {
 
              drawSheetName('Military-Expenditure', 'SELECT A, B, C, D, E, F, G, H', spendingResponseHandler);
-             drawSheetName('Military-Expenditure', 'SELECT A, B, H', latestSpendingtResponseHandler);
+             drawSheetName('Military-PerChange', 'SELECT A, B, C, D, E, F, G', perChangeResponseHandler);
+
+             // drawSheetName('Military-Expenditure', 'SELECT A, B, H', latestSpendingtResponseHandler);
              drawSheetName('full-data', 'SELECT B, F, N, G', spendingPerCapitaResponseHandler);
              drawSheetName('Comparison', 'SELECT A, C, F, G, H', overallResponseHandler);
 
@@ -62,30 +65,55 @@
     </head>
 
     <body>
+    <div id="body">
+
     <h3 style="padding-top: 40px"><center>Welcome to G20 Military Expenditure Analysis</center></h3>
-
-<!--        <div id="military_spending_div" style="width: 1200px; height: 400px;"></div>-->
-        <div id="filter_div_geo"></div>
-    <h4>Military Spending for Year 2019</h4>
-<!--        <div id="mil_geo_chart" style="width: 1200px; height: 400px;padding-top: 70px"></div>-->
-        <div id="mil_geo_chart" style="height: 500px"></div>
-
-    <h4 style="background: #f9f9f9">G20 Countries GDP per Capita verses Expenditure per Capita</h4>
-        <div id="bubble_div" style="height: 500px;"></div>
-
-        <div id="filter_div"></div>
+        <!--    <div id="filter_div_geo"></div>-->
+<!--&lt;!&ndash;        <div id="mil_geo_chart" style="width: 1200px; height: 400px;padding-top: 70px"></div>&ndash;&gt;-->
+<!--        <div id="mil_geo_chart" style="height: 500px"></div>-->
+        <div class="FirstGraph">
         <h4>G20 Countries Expenditure across 6 years</h4>
-
+        <div id="filter_div"></div>
         <div id="over_time_column_chart" style="height: 500px"></div>
 
+        <ol type="1" class="a" style="">
+            <li>In terms of % of GDP, Saudi Arabia has been constantly spending higher followed by Russia and United States. Whereas Per Capita expenditure, Saudi Arabia
+        is highest followed by USA and Australia</li>
+            <li>Saudi Arabia had the highest military spending in year 2016</li>
+            <li>Indonesia and India has the lowest military spending as a per capita whereas Mexico spends lowest as a percentage of GDP</li>
+        </ol>
+        </div>
 
+        <div class="SecondGraph" style="background: #f9f9f9">
+            <h4>G20 Countries Military Expenditure Percentage Change</h4>
+            <div id="per_change_filter_div"></div>
 
-        <div id="bubble_filter" ></div>
-        <h4 style="background: #f9f9f9">G20 Countries GDP verses Expenditure</h4>
-        <div id="bubble_chart" style="height: 500px"></div>
+        <div id="per_change_div" style="height: 500px;padding-top: 0px"></div>
 
+            <ol type="1" class="a" style="">
+                <li>In terms of % of GDP, Saudi Arabia shows highest growth in year 2014-2015 whereas lowest decline in year 2015-2016</li>
+                <li>South Africa's spending is decreasing over the years </li>
+                <li>In terms of per capita spending, Argentina, Brazil, and Mexico has a variations</li>
+            </ol>
 
+        </div>
 
+        <div class="ThirdGraph">
+            <h4>G20 Countries GDP per Capita verses Expenditure per Capita</h4>
+            <div id="bubble_div" style="height: 500px;"></div>
+            <ol type="1" class="a" style="">
+                <li>Saudi Arabia has very high military spending compared with average spending of all other countries over years</li>
+                <li>Graph shows there is positive linear relationship between GDP per capita and Expenditure per capita</li>
+                <li>Countries with very high population have lowest expenditure per capita</li>
+            </ol>
+            </div>
+
+<!--        <div id="bubble_filter" ></div>-->
+<!--        <h4 style="background: #f9f9f9">G20 Countries GDP verses Expenditure</h4>-->
+<!--        <div id="bubble_chart" style="height: 500px"></div>-->
+
+    </div>
+<div id = "footer"></div>
 
     </body>
 </html>
