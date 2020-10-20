@@ -70,7 +70,9 @@ function spendingResponseHandler(response) {
         options: {
             width: '100%',
             height: '100%',
-            vAxis: {format: 'short', title: 'Expenditure'},
+            vAxis: {
+                // format: '#\'%\'',
+                title: "Expenditure as % of GDP"},
             hAxis: {title: 'Country', textStyle: {fontSize: 10}},
             legend: {position: 'top', maxLines: 3, textStyle: {fontSize: 10}},
         }
@@ -96,6 +98,34 @@ function spendingResponseHandler(response) {
         },
         // state: {selectedValues: ['As Per Capita']},
     });
+
+            // When the table is selected, update the orgchart.
+      google.visualization.events.addListener(filter, 'statechange', function()
+      {
+          var state = filter.getState().selectedValues[0];
+          if (state == "Health expenditure (% of GDP)" || state == "Education expenditure (% of GDP)" || state == "Military expenditure (% of GDP)") {
+              chartOptions['options']['vAxis']['title'] = "Expenditure as % of GDP"
+              // chartOptions['options']['vAxis']['format'] = '#\'%\''
+
+              var chart = new google.visualization.ChartWrapper(chartOptions);
+
+
+              console.log(chartOptions['options']['vAxis']['title'])
+
+          } else if (state == "Health expenditure per capita"||state == "Education expenditure per capita" ||state == "Military expenditure per capita"){
+              chartOptions['options']['vAxis']['title'] = "Expenditure Per Capita ($)"
+              chartOptions['options']['vAxis']['format'] = 'short'
+
+              var chart = new google.visualization.ChartWrapper(chartOptions);
+
+          }
+
+          else{
+              chartOptions['options']['vAxis']['title'] = "Expenditure ($)"
+              chartOptions['options']['vAxis']['format'] = 'short'
+
+      }
+      });
     dashboard.bind(filter, chart);
     // chart.draw(data);
     dashboard.draw(data);
@@ -124,7 +154,7 @@ function spendingPerCapitaResponseHandler(response) {
 
 function spendingComparisonResponseHandler(response) {
     var data = response.getDataTable();
-    console.log(data)
+    // console.log(data)
     var dashboard = new google.visualization.Dashboard(document.getElementById('compare_spending_div'));
     data.sort([3])
     var chartOptions = {
@@ -132,7 +162,10 @@ function spendingComparisonResponseHandler(response) {
         containerId: 'compare_spending_div',
         view: {columns: [0, 2, 3, 4]},
         options: {
-            hAxis: {format: 'short', title: 'Expenditure'},
+
+            hAxis: {
+                // format: '#\'%\'',
+                title: "Expenditure as % of GDP"},
             vAxis: {title: 'Country', textStyle: {fontSize: 10}},
             // title: 'G20 Countries Expenditure across 6 years',
             legend: {position: 'right', maxLines: 3, textStyle: {fontSize: 13}},
@@ -150,12 +183,6 @@ function spendingComparisonResponseHandler(response) {
     };
     var chart = new google.visualization.ChartWrapper(chartOptions);
 
-    // for (var i = 0; i < filtersOptions.length; i++) {
-    //     var filterOptions = filtersOptions[i];
-    //     filterOptions.containerId = elementId + '_filter_' + i;
-    //     var filter = new google.visualization.ControlWrapper(filterOptions);
-    //     dashboard.bind(filter, chart);
-    // }
     var filter1 = new google.visualization.ControlWrapper({
         controlType: 'CategoryFilter',
         containerId: 'filter_div_compare1',
@@ -171,7 +198,7 @@ function spendingComparisonResponseHandler(response) {
                 // cssClass: 'category_filter'
                 cssClass: 'dropbtn',
             },
-            fontName: "Helvetica Neue"
+            // fontName: "Helvetica Neue"
         },
         state: {selectedValues: [2019]},
     });
@@ -192,9 +219,36 @@ function spendingComparisonResponseHandler(response) {
             },
             fontName: "Helvetica Neue"
         },
-        state: {selectedValues: ['As Per Capita']},
+        // state: {selectedValues: ['As Per Capita']},
     });
 
+        // When the table is selected, update the orgchart.
+      google.visualization.events.addListener(filter2, 'statechange', function()
+      {
+          var state = filter2.getState().selectedValues[0];
+          if (state == "Percentage of GDP") {
+              chartOptions['options']['hAxis']['title'] = "Expenditure as % of GDP"
+              // chartOptions['options']['hAxis']['format'] = '#\'%\''
+
+              var chart = new google.visualization.ChartWrapper(chartOptions);
+
+
+              console.log(chartOptions['options']['vAxis']['title'])
+
+          } else if (state == "Per Capita"){
+              chartOptions['options']['hAxis']['title'] = "Expenditure Per Capita ($)"
+              chartOptions['options']['hAxis']['format'] = 'short'
+
+              var chart = new google.visualization.ChartWrapper(chartOptions);
+
+          }
+
+          else{
+              chartOptions['options']['hAxis']['title'] = "Expenditure ($)"
+              chartOptions['options']['hAxis']['format'] = 'short'
+
+      }
+      });
     dashboard.bind(filter1, chart);
     dashboard.bind(filter2, chart);
 
@@ -204,7 +258,7 @@ function spendingComparisonResponseHandler(response) {
 
 function overallResponseHandler(response) {
     var data = response.getDataTable();
-    console.log(data)
+    // console.log(data)
     var dashboard = new google.visualization.Dashboard(document.getElementById('military_spending_div'));
 
     var chartOptions = {
@@ -255,7 +309,7 @@ function overallResponseHandler(response) {
 
 function trendGDPResponseHandler(response) {
     var data = response.getDataTable();
-    console.log(data)
+    // console.log(data)
     var dashboard = new google.visualization.Dashboard(document.getElementById('trend_div'));
 
 
@@ -266,7 +320,7 @@ function trendGDPResponseHandler(response) {
         options: {
             // title: 'G20 Countries Military, Health, and Education Expenditure',
             hAxis: {title: 'Year', format: '0'},
-            vAxis: {title: 'Expenditure', format: 'short'},
+            vAxis: {title: 'Expenditure ($)', format: 'short'},
             legend: {position: 'right', maxLines: 3, textStyle: {fontSize: 13}},
             backgroundColor: '#F7F7F7',
 
@@ -301,16 +355,17 @@ function trendGDPResponseHandler(response) {
 
 function GDPResponseHandler(response) {
     var data = response.getDataTable();
-    console.log(data)
+    // console.log(data)
     var options = {
         // chart : { title: 'G20 Countries GDP per Capita verses Expenditure per Capita'},
 
-        colorAxis: {colors: ['#87c3ee', '#142f80']}
+        colorAxis: {colors: ['#87c3ee', '#142f80']},
         // colorAxis: {colors: ['#224be8']},
         //  defaultColor: '#089ff1',
         // title: 'G20 Countries GDP per Capita verses Expenditure per Capita',
         // hAxis: {title: 'Gross Domestic Product per capita'},
         // vAxis: {title: 'Expenditure per capita', format: 'short'},
+        legend: {format: 'short'}
 
 
     };
@@ -321,7 +376,7 @@ function GDPResponseHandler(response) {
 
 function perChangeResponseHandler(response) {
     var data = response.getDataTable();
-    console.log(data)
+    // console.log(data)
     var dashboard = new google.visualization.Dashboard(document.getElementById('military_spending_div'));
 
     var chartOptions = {
@@ -368,9 +423,9 @@ function perChangeResponseHandler(response) {
 
 function comparisonPerChangeResponseHandler(response) {
     var data = response.getDataTable();
-    console.log(data)
     var dashboard = new google.visualization.Dashboard(document.getElementById('military_spending_div'));
 
+    console.log("This chart")
     var chartOptions = {
         chartType: 'ColumnChart',
         containerId: 'over_time_column_chart',
@@ -378,7 +433,7 @@ function comparisonPerChangeResponseHandler(response) {
         options: {
             width: '100%',
             height: '100%',
-            vAxis: {format: '#%', title: 'Percentage Change (%)'},
+            vAxis: {format: '#%', title: 'Expenditure Percentage Change (%)'},
             hAxis: {title: 'Country', textStyle: {fontSize: 10}},
             legend: {position: 'top', maxLines: 3, textStyle: {fontSize: 10}},
         }
@@ -404,6 +459,25 @@ function comparisonPerChangeResponseHandler(response) {
         },
         // state: {selectedValues: ['As Per Capita']},
     });
+
+    // When the table is selected, update the orgchart.
+      google.visualization.events.addListener(filter, 'statechange', function()
+      {
+          var state = filter.getState().selectedValues[0];
+          if (state == "Expenditure per capita") {
+              chartOptions['options']['vAxis']['title'] = "Expenditure per capita percentage change (%)"
+              var chart = new google.visualization.ChartWrapper(chartOptions);
+
+              console.log(chartOptions['options']['vAxis']['title'])
+
+          }
+          else {
+              chartOptions['options']['vAxis']['title'] = "Expenditure Percentage Change (%)"
+              var chart = new google.visualization.ChartWrapper(chartOptions);
+
+          }
+
+      });
     dashboard.bind(filter, chart);
     // chart.draw(data);
     dashboard.draw(data);
