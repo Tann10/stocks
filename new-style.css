@@ -123,6 +123,12 @@ label.mobile-nav-toggle-label.fixed-nav-toggle-label {
 }
 .main h2, p {
     color: #f9f9f9;
+
+}
+.main p {
+    width: 400px;
+    height: 300px;
+    font-size: medium;
 }
 .filter {
     background-color: #4CAF50;
