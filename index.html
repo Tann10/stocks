@@ -16,15 +16,6 @@
 
     <script type="text/javascript" src="helper.js"></script>
 
-    <script>
-        google.charts.load('current', {'packages': ['corechart', 'geochart', 'table', 'controls']});
-        google.charts.setOnLoadCallback(drawDashboard);
-
-        function drawDashboard() {
-
-            drawSheetName('data2019', 'SELECT A, C', GDPResponseHandler);
-        }
-    </script>
     <title>Home</title>
 </head>
 
@@ -32,18 +23,16 @@
 
 <nav class="topnav">
     <a href="About.html"><span>About</span></a>
+    <a href="Trading View.html"><span>Trading View</span></a>
+    <a href="Historicals.html"><span>Historicals</span></a>
     <a href="Comparison.html"><span>Comparison</span></a>
-    <a href="Military.html"><span>Military</span></a>
-    <a href="Education.html"><span>Education</span></a>
-    <a href="Health.html"><span>Health</span></a>
-    <a href="index.html"><span>Home</span></a>
 </nav>
 
 <!-- Header -->
 
 <section id="header">
 
-    <h1>G20 GDP Expenditure Analysis</h1>
+    <h1>Standard & Poor's (SnP) 500 Companies Stock Analysis</h1>
 
 </section>
 
@@ -52,25 +41,75 @@
 
 <section id="one" class="style1">
     <div style='background:transparent !important; padding-bottom: 0; padding-top: 0' class="jumbotron text-center">
-        <p class="lead" style="font-size: 18px">Here you will find Gross Domestic Product and Expenditure Information
-            for G20 countries. The members of the
-            G20 are: Argentina, Australia, Brazil, Canada, China, France, Germany, India, Indonesia, Italy, Japan,
-            Republic of Korea, Mexico, Russia, Saudi Arabia, South Africa, Turkey, United Kingdom, United States, and
-            the European Union.
-            The data is retrieved
-            from <a href="https://data.worldbank.org/">the World Data website</a> Currently,
-            the expenditure data is available for health, military, and education for 6 years (2014-2019). Missing data
-            has been treated using linear interpolation. The purpose of this website is to help researchers, students,
-            analysts, or anyone who is in search of G20 expenditure information to visualize the data. The visualization
-            created is very informative, easy to use, and helpful to derive interesting insights. Feel free to explore
+        <p class="lead" style="font-size: 18px; color:#070707">
+            The S&P 500 Index or the Standard & Poor's 500 Index is a market-capitalization-weighted index of 500 of the
+            largest publicly traded companies in the U.S.. It is not an exact list of the top 500 U.S. companies by
+            market capitalization. because there are other criteria to be included in the index.
+            The S&P is a float-weighted index, meaning company market capitalizations are adjusted by the number of
+            shares available for public trading.
+            <br>
+            The main data source for this website is<a href="https://in.finance.yahoo.com/"> Yahoo Finance</a>
+            <br>
+            The purpose of this website is to help students, analysts, trader or anyone who is in search of stocks information to visualize the data.
+            Although, I have mentioned about trading strategies, I am not recommending any investment/trading decisions and one must do a thorough research before investing.
+            The visualization created is very informative, easy to use, and helpful to derive interesting insights. Feel free to explore
             further by clicking on the sections below or using navigation links.</p>
         <br>
-        <h4>Gross Domestic Product across G20 countries for Year 2019</h4>
-        <div id="geo_div" style="width: 1000px; height: 400px; align-items:center;"></div>
 
+        <div class="tableauviz">
+
+            <div class='tableauPlaceholder' id='viz1607690913677' style='position: relative'>
+                <noscript><a href='#'><img alt=' '
+                                           src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ma&#47;MarketShare_16076666933370&#47;Dashboard2&#47;1_rss.png'
+                                           style='border: none'/></a></noscript>
+                <object class='tableauViz' style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'/>
+                    <param name='embed_code_version' value='3'/>
+                    <param name='site_root' value=''/>
+                    <param name='name' value='MarketShare_16076666933370&#47;Dashboard2'/>
+                    <param name='tabs' value='no'/>
+                    <param name='toolbar' value='yes'/>
+                    <param name='static_image'
+                           value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ma&#47;MarketShare_16076666933370&#47;Dashboard2&#47;1.png'/>
+                    <param name='animate_transition' value='yes'/>
+                    <param name='display_static_image' value='yes'/>
+                    <param name='display_spinner' value='yes'/>
+                    <param name='display_overlay' value='yes'/>
+                    <param name='display_count' value='yes'/>
+                    <param name='language' value='en'/>
+                    <param name='filter' value='publish=yes'/>
+                </object>
+            </div>
+            <script type='text/javascript'>                    var divElement = document.getElementById('viz1607690913677');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            if (divElement.offsetWidth > 800) {
+                vizElement.style.width = '1000px';
+                vizElement.style.height = '827px';
+            } else if (divElement.offsetWidth > 500) {
+                vizElement.style.width = '1000px';
+                vizElement.style.height = '827px';
+            } else {
+                vizElement.style.width = '100%';
+                vizElement.style.height = '727px';
+            }
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+        </div>
+
+
+        <div id="observations">
+<!--        <ol type="1" class="a" style="">-->
+        <li>Size of the bubble represents market cap</li>
+        <li>Color represents different sector of the stock</li>
+        <li>Information technology companies are growing exponentially and Apple, Google, are Microsoft have highest market cap</li>
+        <li>Amazon dominates in consumer discretionary</li>
+        <li>Telecommon sector has only 3 companies in the index and IT has maximum companies</li>
+<!--    </ol>-->
+            </div>
+
+        <!--   Picture hyper links to pages -->
     </div>
-
-    <!--   Picture hyper links to pages -->
 </section>
 
 <section id="two" class="main">
@@ -81,20 +120,24 @@
             <!--            Health -->
             <div class="col-md-4">
 
-							<span class="image fit"><a href="Health.html"><img src="images/Health.jpg"
-                                                                               width="300" height="300" alt=""
-                                                                               class="img-rounded"/></a></span>
+							<span class="image fit"><a href="Trading%20View.html"><img src="images/Health.jpg"
+                                                                                       width="300" height="300" alt=""
+                                                                                       class="img-rounded"/></a></span>
 
-                <h1>Health</h1>
+                <h2>Trading View</h2>
+                <p>The view aims to provide user with information and insights of stock prices. Trading view gives
+                    tree map, candle stick chart and graphs on trading strategies to help user make data driven trading
+                    decisions
+                </p>
 
             </div>
             <!--            Education-->
 
             <div class="col-md-4">
 
-							<span class="image fit"><a href="Education.html"><img src="images/Education.jpg"
-                                                                                  width="300" height="300" alt=""
-                                                                                  class="img-rounded"/></a></span>
+							<span class="image fit"><a href="Comparison.html"><img src="images/Education.jpg"
+                                                                                   width="300" height="300" alt=""
+                                                                                   class="img-rounded"/></a></span>
 
                 <h1>Education</h1>
 
@@ -103,9 +146,9 @@
             <!--            Military -->
             <div class="col-md-4">
 
-							<span class="image fit"><a href="Military.html"><img src="images/Military.jpg"
-                                                                                 width="300" height="300" alt=""
-                                                                                 class="img-rounded"/></a></span>
+							<span class="image fit"><a href="Historicals.html"><img src="images/Military.jpg"
+                                                                                    width="300" height="300" alt=""
+                                                                                    class="img-rounded"/></a></span>
 
                 <h1>Military</h1>
             </div>
