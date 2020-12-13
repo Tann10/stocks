@@ -8,95 +8,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
     <link rel="stylesheet" href="new-style.css"/>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
     <!--    </head>-->
     <nav class="topnav">
-
         <a href="About.html"><span>About</span></a>
+
         <a href="Comparison.html"><span>Comparison</span></a>
-        <a href="Military.html"><span>Military</span></a>
-        <a href="Education.html"><span>Education</span></a>
-        <a href="Health.html"><span>Health</span></a>
+
+        <a href="Historicals.html"><span>Military</span></a>
+        <a href="Comparison.html"><span>Education</span></a>
+        <a href="Trading%20View.html"><span>Health</span></a>
+
+
         <a href="index.html"><span>Home</span></a>
 
     </nav>
-    <title>Comparisons</title>
-
+    <title>Education Spending Comparisons</title>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script type="text/javascript" src="helper.js"></script>
-
-    <script>
-        google.charts.load('current', {'packages': ['corechart', 'geochart', 'table', 'controls']});
-        google.charts.setOnLoadCallback(drawDashboard);
-
-        function drawDashboard() {
-
-            drawSheetName('Comparison', 'SELECT A, B, C, D, E, F', spendingComparisonResponseHandler);
-            drawSheetName('full-data', 'SELECT B, C, K, L, M, D', trendGDPResponseHandler);
-            drawSheetName('Comparison-PerChange', 'SELECT A, B, C, D, E', comparisonPerChangeResponseHandler);
-
-
-        }
-    </script>
 </head>
 
 <body>
 <div id="body">
-    <div class="FirstGraph" style="padding-top: 4%">
-        <h4>G20 Countries Military, Health, and Education Expenditure</h4>
-        <div id="filter_div_compare1" style="width: 300px; float:left; height:50px; margin:10px"></div>
-        <div id="filter_div_compare2" style="width: 300px; float:left; height:100px;  margin:10px"></div>
-        <div id="compare_spending_div" style=" height: 400px; padding-top: 70px"></div>
 
-        <ol type="1" class="a" style="padding-top: 11.5%">
-            <li>In terms of % of GDP, United States has highest expenditure altogether followed by Brazil and Germany
-            </li>
-            <li>United States spends highest on Health, Education and then Military</li>
-            <li>Even in terms of per capita United States expenditure is highest whereas India is lowest</li>
-            <li>In terms of fixed value expenditure (US Dollars), there is a huge gap between the spending of the US and
-                rest of the countries
-            </li>
-        </ol>
-    </div>
+    <div class="FirstGraph">
+        <div class="description">
+            Companies use the price-to-book ratio (P/B ratio) to compare a firm's market capitalization to its book
+            value. It's calculated by dividing the company's stock price per share by its book value per share (BVPS).
+            Book value is also the tangible net asset value of a company calculated as total assets minus intangible
+            assets (.e.g. patents, goodwill) and liabilities.
+            <ol>
+                <li>The P/B ratio measures the market's valuation of a company relative to its book value</li>
+                <li>The market value of equity is typically higher than the book value of a company</li>
+                <li>P/B ratio is used by value investors to identify potential investments</li>
+                <li>P/B ratios under 1 are typically considered solid investments</li>
 
-    <div class="SecondGraph" style="background: #f9f9f9">
-        <h4>Military, Health Care , and Education Expenditure over years</h4>
-
-        <div id="trend_filter_div"></div>
-
-        <div id="trend_div" style=" height: 500px"></div>
-
-        <ol type="1" class="a" style="padding-top: 0%">
-            <li>In the US, health expenditure has been increasing over the years but education and military is nearly
-                the same
-            </li>
-            <li>India shows nearly same change in shape of spending over years</li>
-            <li>Saurdi Arabia shows increase in miltary spending but not much change in health spending</li>
-            </li>
-        </ol>
-    </div>
-
-    <div class="ThirdGraph">
-
-        <h4>G20 Countries Military, Education, Health Percentage Change from Year 2014 to 2019</h4>
-        <div id="filter_div"></div>
-        <div id="over_time_column_chart" style="height: 500px;"></div>
-        <div id="observations">
-            <!--        <p>-->
-            <ol type="1" class="a" style="">
-                <li> In terms of USD expenditure, India, Indonesia, Korea, and United States have positive growth whereas Argentina,
-                    Brazil, Italy Mexico, Russia and UK has negative growth across all sectors.
-                </li>
-                <li>Fastest growing country in military and education is India and in health is China</li>
-                <li>Similar results are seen in terms of per capita</li>
             </ol>
+            <br>
+            To learn more please visit <a
+                href="investopedia.com/terms/p/price-to-bookratio.asp#:~:text=The%20P%2FB%20ratio%20measures,are%20typically%20considered%20solid%20investments.">investopedia</a>
         </div>
+
+    </div>
+
+</div>
+
+<div class="SecondGraph" style="background: #f9f9f9">
+
+    <div class="description">
+
+        The price-earnings ratio (P/E ratio) relates a company's share price to its earnings per share.
+        A high P/E ratio could mean that a company's stock is over-valued, or else that investors are expecting high
+        growth rates in the future.
+        Companies that have no earnings or that are losing money do not have a P/E ratio since there is nothing to put
+        in the denominator.
+        Two kinds of P/E ratios - forward and trailing P/E - are used in practice.
+        <br>
+        In general, a high P/E suggests that investors are expecting higher earnings growth in the future compared to
+        companies with a lower P/E. A low P/E can indicate either that a company may currently be undervalued or that
+        the company is doing exceptionally well relative to its past trends. When a company has no earnings or is
+        posting losses, in both cases P/E will be expressed as “N/A.” Though it is possible to calculate a negative P/E,
+        this is not the common convention.
+        <br>
+        To learn more please visit <a
+                href="https://www.investopedia.com/terms/p/price-earningsratio.asp">investopedia</a>
+
     </div>
 </div>
-<div id="footer"></div>
 
+
+<div class="ThirdGraph">
+
+
+        <li>Graph shows there is positive linear relationship between GDP per capita and Expenditure per capita</li>
+        <li>Countries having high population have lesser expenditure per capita</li>
+    </ol>
+
+</div>
+</div>
+<div id="footer"></div>
 </body>
 </html>
