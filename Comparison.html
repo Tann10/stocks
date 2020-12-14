@@ -18,8 +18,8 @@
     <nav class="topnav">
         <a href="About.html"><span>About</span></a>
         <a href="Comparison.html"><span>Comparison</span></a>
-        <a href="Historicals.html"><span>Historicals</span></a>
         <a href="Trading View.html"><span>Trading View</span></a>
+        <a href="Historicals.html"><span>Historicals</span></a>
         <a href="index.html"><span>Home</span></a>
 
     </nav>
@@ -31,9 +31,9 @@
 <body>
 <div id="body">
 
-    <div class="FirstGraph">
-        <div class="tradingviewtableauviz" style="background: #f9f9f9">
-            <div class='tableauPlaceholder' id='viz1607856511511' style='position: relative'>
+    <div class="FirstGraph" style="background: #f9f9f9">
+        <div class="tradingviewtableauviz">
+            <div class='tableauPlaceholder' id='viz1607941563533' style='position: relative'>
                 <noscript><a href='#'><img alt=' '
                                            src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Co&#47;Compareview1&#47;comporeview2&#47;1_rss.png'
                                            style='border: none'/></a></noscript>
@@ -55,7 +55,7 @@
                     <param name='filter' value='publish=yes'/>
                 </object>
             </div>
-            <script type='text/javascript'>                    var divElement = document.getElementById('viz1607856511511');
+            <script type='text/javascript'>                    var divElement = document.getElementById('viz1607941563533');
             var vizElement = divElement.getElementsByTagName('object')[0];
             if (divElement.offsetWidth > 800) {
                 vizElement.style.width = '1400px';
@@ -70,39 +70,120 @@
             var scriptElement = document.createElement('script');
             scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
             vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-        </div>
-        <div class="description">
-            Companies use the price-to-book ratio (P/B ratio) to compare a firm's market capitalization to its book
-            value. It's calculated by dividing the company's stock price per share by its book value per share (BVPS).
-            Book value is also the tangible net asset value of a company calculated as total assets minus intangible
-            assets (.e.g. patents, goodwill) and liabilities.
-            <ol>
-                <li>The P/B ratio measures the market's valuation of a company relative to its book value</li>
-                <li>The market value of equity is typically higher than the book value of a company</li>
-                <li>P/B ratio is used by value investors to identify potential investments</li>
-                <li>P/B ratios under 1 are typically considered solid investments</li>
+            <div class="description">
+                <b>Price to Sales ratio</b>
+                Price to sales ratio = Current Share Price / Sales per Share
+                Higher the P/S ratio, higher is the valuation of the firm. One has to compare the P/S ratio with its
+                competitors in the industry to get a fair sense of how expensive or cheap the stock is.
+                <br>
+                <br>
+                <b>Observations</b>
+                ~ Apple P/S is 3.46 that means for every dollar of sales, the stock price is 3.46 times higher.
+                ~ In SnP 500 stock, nvidia has highest P/S ratio compared with companies in the same sector.
+                <br>
+                <br>
 
-            </ol>
-            <br>
-            <br>
-                    The price-earnings ratio (P/E ratio) relates a company's share price to its earnings per share.
-        A high P/E ratio could mean that a company's stock is over-valued, or else that investors are expecting high
-        growth rates in the future.
-        Companies that have no earnings or that are losing money do not have a P/E ratio since there is nothing to put
-        in the denominator.
-        Two kinds of P/E ratios - forward and trailing P/E - are used in practice.
-        <br>
-        In general, a high P/E suggests that investors are expecting higher earnings growth in the future compared to
-        companies with a lower P/E. A low P/E can indicate either that a company may currently be undervalued or that
-        the company is doing exceptionally well relative to its past trends. When a company has no earnings or is
-        posting losses, in both cases P/E will be expressed as “N/A.” Though it is possible to calculate a negative P/E,
-        this is not the common convention.
-        <br>
-        To learn more please visit <a
-            href="https://www.investopedia.com">investopedia</a>
+                <b>Price to Book ratio</b>
+                Price to book ratio = Current Share Price / Book Value per Share
+                The higher the ratio, the more expensive the stock is. A high ratio could indicate the firm is
+                overvalued relative to the equity/ book value of the company. A low ratio could indicate the company is
+                undervalued relative to the equity/ book value of the company.
+                <br>
+                <br>
+                <b>Observations</b>
+                ~ Apple P/B is 5.66 that means the stock price is 5.66 times higher than its book value.
+                ~ Intuit, Netflix, Mastercard have high book value compared to other companies in the IT sector.
+                ~ If this ratio is around 1 then investor considers it as a solid investment.
+
+                <br>
+                <br>
+                <b>Price to Earnings ratio</b>
+
+                Price to earnings ratio = Current Share Price / earnings per Share
+
+                <br>
+                In general, a high P/E suggests that investors are expecting higher earnings growth in the future
+                compared
+                to
+                companies with a lower P/E. A low P/E can indicate either that a company may currently be undervalued or
+                that
+                the company is doing exceptionally well relative to its past trends. When a company has no earnings or
+                is
+                posting losses, in both cases P/E will be expressed as “N/A.” Though it is possible to calculate a
+                negative
+                P/E,
+                this is not the common convention.
+                <br>
+                <br>
+                <b>Observations</b>
+                ~ Apple P/E is 16.9 every unit of profit generated by APPLE, the market participants are willing to pay
+                $ 16.9 to acquire the share.
+                <br>
+                ~ Salesforce has highest P/E ratio ~ 520.2
+                To learn more please visit <a
+                    href="https://www.investopedia.com">investopedia</a>
+            </div>
+        </div>
+    </div>
+    <div class="SecondGraph" style="background: #f9f9f9" ;>
+        <div class="tradingviewtableauviz">
+            <div class='tableauPlaceholder' id='viz1607926848280' style='position: relative'>
+                <noscript><a href='#'><img alt=' '
+                                           src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Hi&#47;Histview2&#47;Histview2&#47;1_rss.png'
+                                           style='border: none'/></a></noscript>
+                <object class='tableauViz' style='display:none;'>
+                    <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F'/>
+                    <param name='embed_code_version' value='3'/>
+                    <param name='site_root' value=''/>
+                    <param name='name' value='Histview2&#47;Histview2'/>
+                    <param name='tabs' value='no'/>
+                    <param name='toolbar' value='yes'/>
+                    <param name='static_image'
+                           value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Hi&#47;Histview2&#47;Histview2&#47;1.png'/>
+                    <param name='animate_transition' value='yes'/>
+                    <param name='display_static_image' value='yes'/>
+                    <param name='display_spinner' value='yes'/>
+                    <param name='display_overlay' value='yes'/>
+                    <param name='display_count' value='yes'/>
+                    <param name='language' value='en'/>
+                    <param name='filter' value='publish=yes'/>
+                </object>
+            </div>
+            <script type='text/javascript'>                    var divElement = document.getElementById('viz1607926848280');
+            var vizElement = divElement.getElementsByTagName('object')[0];
+            if (divElement.offsetWidth > 800) {
+                vizElement.style.width = '1400px';
+                vizElement.style.height = '827px';
+            } else if (divElement.offsetWidth > 500) {
+                vizElement.style.width = '1400px';
+                vizElement.style.height = '827px';
+            } else {
+                vizElement.style.width = '100%';
+                vizElement.style.height = '727px';
+            }
+            var scriptElement = document.createElement('script');
+            scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+            vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+
+            <div class="description">
+                Above bar chart shows race in companies in terms of revenue from year 2015 to 2019.
+                <br>
+                <br>
+                <b>Observations</b>
+                <br>
+                ~ Apple has been consistently on top for last 4 years
+                <br>
+                ~ In 2015, IBM was on rank 2 while Google was on rank 3
+                <br>
+                ~ In 2016, Google crossed IBM in terms of revenue and has been leading IBM since then.
+                <br>
+
+            </div>
+
         </div>
 
     </div>
+</div>
 
 </div>
 
